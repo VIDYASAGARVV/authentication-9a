@@ -1,0 +1,73 @@
+const select = document.querySelector("select");
+const impel = document.querySelector("img");
+
+const para = document.querySelector("p");
+const bE = document.querySelector("b");
+const priceEl = document.querySelector("a");
+const signContainerEl = document.createElement("signContainer");
+
+select.addEventListener("change", setWeather);
+
+function setWeather() {
+  const choice = select.value;
+
+  switch (choice) {
+    case "Aries":
+      imgel.src =
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr8KvDlbIrPON10-1cBhUnNsEhx-BIms8bzQ&usqp=CAU";
+
+      para.textContent = " Your birth to Mar 21st - Apr 20th	Bloodstone.";
+      para.textContent =
+        "BLOODSTONE STONE - 3.42 CARATS 38.42cts. Semi-Precious Gemstone SKU: ZDGBLO5874719 .Bloodstone for vitality and passion";
+
+      para.style.color = "green";
+      priceEl.textContent = "₹2,930";
+      bE.textContent = "Buy Now";
+      imgel.src =
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr8KvDlbIrPON10-1cBhUnNsEhx-BIms8bzQ&usqp=CAU";
+
+      break;
+    case "rainy":
+      imgel.src =
+        "https://www.zodiacgemstones.com/uploads/products/zdgyls1343922-1_313675102_l.JPG";
+      para.textContent =
+        "YELLOW SAPPHIRE - 4.54 CARAT 4.54cts.SKU: ZDGYLS1343922 ";
+      para.style.color = "green";
+      priceEl.textContent = "₹17,510";
+      signContainerEl.textContent = "Buy Now";
+      bE.textContent = "Buy Now";
+
+      break;
+    case "snowing":
+      imgel.src =
+        "https://i.etsystatic.com/iap/34779b/3789938051/iap_300x300.3789938051_kanj6bwd.jpg?version=0";
+      para.textContent =
+        "YELLOW SAPPHIRE - 4.54 CARAT 4.54cts.SKU: ZDGYLS1343922 ";
+      para.style.color = "green";
+      priceEl.textContent = "₹5,510";
+      bE.textContent = "Buy Now";
+      break;
+
+    case "overcast":
+      imgel.src =
+        "https://www.zodiacgemstones.com/uploads/products/zdgeme371722-1_1488745671_l.JPG";
+
+      para.textContent =
+        "EMERALD STONE -3.84 CARAT 3.84cts. Precious Gemstone SKU: ZDGEME371722. Emerald for love and kindness";
+      para.style.color = "green";
+      priceEl.textContent = "₹14,400";
+      bE.textContent = "Buy Now";
+      break;
+    default:
+      para.textContent = "";
+  }
+}
+
+const express = require("express");
+const app = express();
+
+app.get("/page", (request, response) => {
+  response.sendFile("./page.html", { root: __dirname });
+});
+
+app.listen(3000);
